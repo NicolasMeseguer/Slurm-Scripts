@@ -36,36 +36,36 @@
 cd /home/nmeseguer/mgpusim/samples/stream
 
 cd elementwise_stride
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../elementwise
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../elementwise_copy_stride
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../elementwise_copy
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../copy
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../scale
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../add
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 cd ../triad
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40
+#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 
 # You will find a file called slurm-1234.out in the submit directory.
 # This file will contain all output that was produced during runtime, 
