@@ -39,8 +39,7 @@ IFS=','
 cd /home/nmeseguer/mgpusim/samples/stream
 
 cd elementwise_stride
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -48,8 +47,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../elementwise
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -57,8 +55,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../elementwise_copy_stride
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -66,8 +63,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../elementwise_copy
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -75,8 +71,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../copy
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -84,8 +79,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../scale
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -93,8 +87,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../add
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
@@ -102,8 +95,7 @@ do
 done < <(tail -n +4 $INPUT)
 
 cd ../triad
-#go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 [ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
 while read id where what value
 do
