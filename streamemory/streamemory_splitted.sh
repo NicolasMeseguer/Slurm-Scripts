@@ -33,39 +33,82 @@
 # This is where the actual work is done. In this case, the script only waits.
 # The time command is optional, but it may give you a hint on how long the
 # command worked
+INPUT=metrics.csv
+IFS=','
+
 cd /home/nmeseguer/mgpusim/samples/stream
 
 cd elementwise_stride
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../elementwise
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../elementwise_copy_stride
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../elementwise_copy
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../copy
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../scale
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../add
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 cd ../triad
 #go run main.go -timing -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
 go run main.go -timing -length=16384 -NITER=3 -cus=64 -wfpoolsize=40 -akitartm-port=10100
+[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+while read id where what value
+do
+    echo "$value"
+done < <(tail -n +4 $INPUT)
 
 # You will find a file called slurm-1234.out in the submit directory.
 # This file will contain all output that was produced during runtime, 
