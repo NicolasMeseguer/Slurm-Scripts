@@ -39,64 +39,72 @@ IFS=','
 cd /home/nmeseguer/mgpusim/samples/stream
 
 cd elementwise_stride
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../elementwise
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../elementwise_copy_stride
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../elementwise_copy
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../copy
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../scale
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../add
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
 cd ../triad
-go run main.go -timing -parallel -length=8388608 -NITER=10 -cus=64 -wfpoolsize=40 -akitartm-port=10100
-[ ! -f $INPUT ] && { echo "Metrics not found!"; exit 99; }
+go run main.go -timing -parallel
+sleep 20
+[ ! -f $INPUT ] && { echo "Metrics not found!";}
 while read id where what value
 do
     echo "$value"

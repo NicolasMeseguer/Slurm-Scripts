@@ -5,7 +5,7 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=streamemory_benchmark
+#SBATCH --job-name=streamemory_unique
 
 # Define, how many nodes you need. Here, we ask for 1 node since we have a single-node machine.
 #SBATCH --nodes=1
@@ -17,7 +17,7 @@
 # force-stopped by the server. If you make the expected time too long, it will
 # take longer for the job to start. Here, we say the job will take 80 minutes.
 #              d-hh:mm:ss
-#SBATCH --time=0-48:00:00
+#SBATCH --time=2-00:00:00
 
 # Define the partition on which the job shall run. May be omitted.
 #SBATCH --partition LocalQ
@@ -33,10 +33,11 @@
 # This is where the actual work is done. In this case, the script only waits.
 # The time command is optional, but it may give you a hint on how long the
 # command worked
+
 cd /home/nmeseguer/mgpusim/samples/stream
 
-go build
-./stream -timing
+cd elementwise_stride
+go run main.go -timing -parallel
 
 # You will find a file called slurm-1234.out in the submit directory.
 # This file will contain all output that was produced during runtime, 
