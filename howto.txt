@@ -1,4 +1,0 @@
-1. Copy and modify the script to match your preferences.
-2. Run it with 'sbatch name.sh'
-3. A .out file will be stored in the same folder from which the script was launched.
-4. If used with MGPUSim (-report-all), you will find the metrics.csv output in the frontend of the benchmark (i.e. samples/elementwise/).
