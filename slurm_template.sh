@@ -5,7 +5,7 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=elementwise2d
+#SBATCH --job-name=your_jobname
 
 # Define, how many nodes you need. Here, we ask for 1 node since we have a single-node machine.
 #SBATCH --nodes=1
@@ -20,8 +20,13 @@
 #       Actual work        #
 ############################
 
-cd /home/nmeseguer/mgpusim-dev/samples/elementwise2d
-go run main.go -timing -magic-memory-copy -width=16384
+ls -la
+time sleep 90
+echo "here you can write commands :)"
+
+# You will find a file called slurm-1234.out in the submit directory.
+# This file will contain all output that was produced during runtime, 
+# i.e. stdout and stderr.
 
 # Finish the script
 exit 0
