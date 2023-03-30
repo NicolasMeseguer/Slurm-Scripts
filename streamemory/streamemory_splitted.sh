@@ -97,9 +97,5 @@ do
     echo "$value"
 done < <(tail -n +4 $INPUT)
 
-# You will find a file called slurm-1234.out in the submit directory.
-# This file will contain all output that was produced during runtime, 
-# i.e. stdout and stderr.
-
 # Finish the script
 exit 0
