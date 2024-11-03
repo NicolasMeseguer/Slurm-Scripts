@@ -5,7 +5,7 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=tma_dotproduct_queue_4cu_4qt
+#SBATCH --job-name=tma_dotproduct_queue_4cus_4qt
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
@@ -24,19 +24,19 @@ cd ./dotproduct_queue
 go build
 
 # 512 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cu-4qt-512" -length=1048576 -tilesize=512 -queue_tiles=4 -globalsize=2304 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-4qt-512" -length=1048576 -tilesize=512 -queue_tiles=4 -globalsize=2304 -localsize=576 &
 
 # 1024 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cu-4qt-1024" -length=1048576 -tilesize=1024 -queue_tiles=4 -globalsize=2304 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-4qt-1024" -length=1048576 -tilesize=1024 -queue_tiles=4 -globalsize=2304 -localsize=576 &
 
 # 2048 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cu-4qt-2048" -length=1048576 -tilesize=2048 -queue_tiles=4 -globalsize=2304 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-4qt-2048" -length=1048576 -tilesize=2048 -queue_tiles=4 -globalsize=2304 -localsize=576 &
 
 # 4096 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cu-4qt-4096" -length=1048576 -tilesize=4096 -queue_tiles=4 -globalsize=2304 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-4qt-4096" -length=1048576 -tilesize=4096 -queue_tiles=4 -globalsize=2304 -localsize=576 &
 
 # 8192 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cu-4qt-8192" -length=1048576 -tilesize=8192 -queue_tiles=4 -globalsize=2304 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-4qt-8192" -length=1048576 -tilesize=8192 -queue_tiles=4 -globalsize=2304 -localsize=576 &
 
 wait
 

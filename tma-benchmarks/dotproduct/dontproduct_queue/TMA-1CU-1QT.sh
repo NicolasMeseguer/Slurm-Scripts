@@ -5,7 +5,7 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=tma_dotproduct_queue_1cu_1qt
+#SBATCH --job-name=tma_dotproduct_queue_1cus_1qt
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
@@ -24,19 +24,19 @@ cd ./dotproduct_queue
 go build
 
 # 512 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-1qt-512" -length=262144 -tilesize=512 -queue_tiles=1 -globalsize=576 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cus-1qt-512" -length=262144 -tilesize=512 -queue_tiles=1 -globalsize=576 -localsize=576 &
 
 # 1024 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-1qt-1024" -length=262144 -tilesize=1024 -queue_tiles=1 -globalsize=576 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cus-1qt-1024" -length=262144 -tilesize=1024 -queue_tiles=1 -globalsize=576 -localsize=576 &
 
 # 2048 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-1qt-2048" -length=262144 -tilesize=2048 -queue_tiles=1 -globalsize=576 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cus-1qt-2048" -length=262144 -tilesize=2048 -queue_tiles=1 -globalsize=576 -localsize=576 &
 
 # 4096 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-1qt-4096" -length=262144 -tilesize=4096 -queue_tiles=1 -globalsize=576 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cus-1qt-4096" -length=262144 -tilesize=4096 -queue_tiles=1 -globalsize=576 -localsize=576 &
 
 # 8192 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-1qt-8192" -length=262144 -tilesize=8192 -queue_tiles=1 -globalsize=576 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cus-1qt-8192" -length=262144 -tilesize=8192 -queue_tiles=1 -globalsize=576 -localsize=576 &
 
 wait
 
