@@ -12,7 +12,7 @@
 # We want to launch 1 task.
 #SBATCH --ntasks=1
 # We want to use all the cores of the node.
-#SBATCH --cpus-per-task=12
+#SBATCH --cpus-per-task=2
 
 # You may not place any commands before the last SBATCH directive
 
