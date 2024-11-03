@@ -8,7 +8,7 @@
 #SBATCH --job-name=tma_dotproduct_16cus
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=12
 
 # You may not place any commands before the last SBATCH directive
 
