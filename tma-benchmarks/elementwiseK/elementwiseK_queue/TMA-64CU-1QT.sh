@@ -26,6 +26,9 @@ go build
 # 512 TileSize
 ./elementwiseK_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-1qt-512" -length=16777216 -tilesize=512 -queue_tiles=1 -globalsize=36864 -localsize=576 &
 
+# 2048 TileSize
+./elementwiseK_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-1qt-2048" -length=16777216 -tilesize=2048 -queue_tiles=1 -globalsize=36864 -localsize=576 &
+
 # 8192 TileSize
 ./elementwiseK_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-1qt-8192" -length=16777216 -tilesize=8192 -queue_tiles=1 -globalsize=36864 -localsize=576 &
 

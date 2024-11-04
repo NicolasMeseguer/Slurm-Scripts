@@ -23,7 +23,7 @@ cd ./dotproduct_queue_configurator
 
 go build
 
-./dotproduct_queue_configurator -timing -report-all -magic-memory-copy -metric-file-name="slurm-2cus" -length=524288 -globalsize=1152 -localsize=576
+./dotproduct_queue_configurator -timing -report-all -magic-memory-copy -metric-file-name="slurm-2cus" -length=2097152 -globalsize=1152 -localsize=576
 
 # Finish the script
 exit 0

@@ -24,13 +24,13 @@ cd ./dotproduct_notma
 go build
 
 # 512 TileSize
-./dotproduct_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-512" -length=8388608 -tilesize=512 -globalsize=16384 -localsize=512 &
+./dotproduct_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-512" -length=2097152 -tilesize=512 -globalsize=16384 -localsize=512 &
 
 # 1024 TileSize
-./dotproduct_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-1024" -length=8388608 -tilesize=1024 -globalsize=16384 -localsize=512 &
+./dotproduct_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-1024" -length=2097152 -tilesize=1024 -globalsize=16384 -localsize=512 &
 
 # 4096 TileSize
-./dotproduct_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-4096" -length=8388608 -tilesize=4096 -globalsize=16384 -localsize=512 &
+./dotproduct_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-4096" -length=2097152 -tilesize=4096 -globalsize=16384 -localsize=512 &
 
 wait
 

@@ -8,7 +8,7 @@
 #SBATCH --job-name=tma_matrixmatrix_queue_2cus_2qt
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=12
+#SBATCH --cpus-per-task=21
 
 # You may not place any commands before the last SBATCH directive
 

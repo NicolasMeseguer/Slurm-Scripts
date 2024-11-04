@@ -24,10 +24,10 @@ cd ./dotproduct_queue
 go build
 
 # 512 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-512" -length=4194304 -tilesize=512 -queue_tiles=1 -globalsize=9216 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-512" -length=2097152 -tilesize=512 -queue_tiles=1 -globalsize=9216 -localsize=576 &
 
 # 4096 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-4096" -length=4194304 -tilesize=4096 -queue_tiles=1 -globalsize=9216 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-4096" -length=2097152 -tilesize=4096 -queue_tiles=1 -globalsize=9216 -localsize=576 &
 
 wait
 

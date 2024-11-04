@@ -6,13 +6,15 @@ cd ./dotproduct_notma
 
 sbatch NOTMA-1CU.sh
 
-# The DotProduct is not implemented spatially, using more means no improvement
+# We can already skip 2CUs to 8CUs
 # sbatch NOTMA-2CUs.sh
 # sbatch NOTMA-4CUs.sh
 # sbatch NOTMA-8CUs.sh
+
+# TODO: Wait for 1CU to finish, to get the best results
 # sbatch NOTMA-16CUs.sh
-# sbatch NOTMA-32CUs.sh
-# sbatch NOTMA-64CUs.sh
+sbatch NOTMA-32CUs.sh
+sbatch NOTMA-64CUs.sh
 
 # Finish the script
 exit 0
