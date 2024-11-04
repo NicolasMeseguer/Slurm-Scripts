@@ -25,16 +25,16 @@ cd ./matrixmatrix_notma
 go build
 
 # 64 TileSize
-./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-64" -dim_m=2048 -dim_k=2048 -dim_n=2048 -TileSizeK=64 -globalsize=2048 -localsize=512 &
+./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-64" -dim_m=512 -dim_k=2048 -dim_n=128 -TileSizeK=64 -globalsize=2048 -localsize=512 &
 
 # 128 TileSize
-./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-128" -dim_m=2048 -dim_k=2048 -dim_n=2048 -TileSizeK=128 -globalsize=2048 -localsize=512 &
+./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-128" -dim_m=512 -dim_k=2048 -dim_n=128 -TileSizeK=128 -globalsize=2048 -localsize=512 &
 
 # 256 TileSize
-./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-256" -dim_m=2048 -dim_k=2048 -dim_n=2048 -TileSizeK=256 -globalsize=2048 -localsize=512 &
+./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-256" -dim_m=512 -dim_k=2048 -dim_n=128 -TileSizeK=256 -globalsize=2048 -localsize=512 &
 
 # 512 TileSize
-./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-512" -dim_m=2048 -dim_k=2048 -dim_n=2048 -TileSizeK=512 -globalsize=2048 -localsize=512 &
+./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-4cus-512" -dim_m=512 -dim_k=2048 -dim_n=128 -TileSizeK=512 -globalsize=2048 -localsize=512 &
 
 wait
 

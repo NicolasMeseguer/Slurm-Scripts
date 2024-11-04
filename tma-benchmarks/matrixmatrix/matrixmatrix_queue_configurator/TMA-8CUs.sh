@@ -24,7 +24,7 @@ cd ./matrixmatrix_queue_configurator
 
 go build
 
-./matrixmatrix_queue_configurator -timing -magic-memory-copy -report-all -metric-file-name="slurm-8cus" -dim_m=2048 -dim_k=2048 -dim_n=2048 -globalsize=4608 -localsize=576
+./matrixmatrix_queue_configurator -timing -magic-memory-copy -report-all -metric-file-name="slurm-8cus" -dim_m=512 -dim_k=2048 -dim_n=128 -globalsize=4608 -localsize=576
 
 # Finish the script
 exit 0
