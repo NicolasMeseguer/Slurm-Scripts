@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-# TMA Cartesian
+# TMA Cartesian Queue Configurator
 
-cd ./cartesian
+cd ./cartesian_queue_configurator
 
 sbatch TMA-1CU.sh
 sbatch TMA-2CUs.sh

@@ -11,8 +11,7 @@ sbatch NOTMA-1CU.sh
 # sbatch NOTMA-4CUs.sh
 # sbatch NOTMA-8CUs.sh
 
-# TODO: Wait for 1CU to finish, to get the best results
-# sbatch NOTMA-16CUs.sh
+sbatch NOTMA-16CUs.sh
 sbatch NOTMA-32CUs.sh
 sbatch NOTMA-64CUs.sh
 

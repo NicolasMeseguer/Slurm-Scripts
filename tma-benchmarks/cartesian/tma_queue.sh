@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-# TMA cartesian Queue
+# TMA Cartesian Queue
 
 cd ./cartesian_queue
 

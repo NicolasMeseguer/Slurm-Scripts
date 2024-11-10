@@ -24,7 +24,7 @@ cd ./dotproduct
 go build
 
 # 512 TileSize
-./dotproduct -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-512" -length=2097152 -tilesize=512 -globalsize=36864 -localsize=576 &
+# ./dotproduct -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-512" -length=2097152 -tilesize=512 -globalsize=36864 -localsize=576 &
 
 # 1024 TileSize
 ./dotproduct -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-1024" -length=2097152 -tilesize=1024 -globalsize=36864 -localsize=576 &

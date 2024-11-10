@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-# No TMA cartesian
+# No TMA Cartesian
 
 cd ./cartesian_notma
 

@@ -2,7 +2,7 @@
 
 # TMA ElementwiseK Queue
 
-cd ./dontproduct_queue_configurator
+cd ./dotproduct_queue_configurator
 
 sbatch TMA-1CU.sh
 
