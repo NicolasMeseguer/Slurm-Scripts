@@ -5,7 +5,7 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=tma_matrixvector_queue_configurator_8cus
+#SBATCH --job-name=tma_matrixvector_queue_configurator_16cus
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -23,7 +23,7 @@ cd ./matrixvector_queue_configurator
 
 go build
 
-./matrixvector_queue_configurator -timing -report-all -magic-memory-copy -metric-file-name="slurm-8cus" -dim_m=2048 -dim_k=2048 -globalsize=4608 -localsize=576
+./matrixvector_queue_configurator -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus" -dim_m=2048 -dim_k=2048 -globalsize=9216 -localsize=576
 
 # Finish the script
 exit 0
