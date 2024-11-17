@@ -5,7 +5,7 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=tma_cartesian_queue_configurator_1cu
+#SBATCH --job-name=tma_cartesian_queue_configurator_16cus
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
@@ -23,7 +23,7 @@ cd ./cartesian_queue_configurator
 
 go build
 
-./cartesian_queue_configurator -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu" -length_a=4096 -length_b=4096 -globalsize=576 -localsize=576
+./cartesian_queue_configurator -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus" -length_a=65536 -length_b=4096 -globalsize=9216 -localsize=576
 
 # Finish the script
 exit 0
