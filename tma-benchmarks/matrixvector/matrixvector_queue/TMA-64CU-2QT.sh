@@ -25,7 +25,7 @@ cd ./matrixvector_queue
 go build
 
 # 512 TileSize
-./matrixvector_queue -timing -magic-memory-copy -report-all -metric-file-name="slurm-64cus-2qt-512" -dim_m=2048 -dim_m=2048 -TileSizeK=512 -queue_tiles=2 -globalsize=36864 -localsize=576 &
+./matrixvector_queue -timing -magic-memory-copy -report-all -metric-file-name="slurm-64cus-2qt-512" -dim_m=2048 -dim_k=2048 -TileSizeK=512 -queue_tiles=2 -globalsize=36864 -localsize=576 &
 
 wait
 
