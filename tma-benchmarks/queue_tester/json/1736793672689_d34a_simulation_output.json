@@ -1,0 +1,21 @@
+{
+    "vector_size": 2048,
+    "arithmetic_intensity": "LOW",
+    "data_type_size": 4,
+    "consumer_wavefronts": 8,
+    "number_of_cus": 16,
+    "vectors": [
+        {
+            "id": 0,
+            "vector_type": "STATIONARY",
+            "tile_size": 1024,
+            "num_tiles": 2
+        },
+        {
+            "id": 1,
+            "vector_type": "STATIONARY",
+            "tile_size": 1024,
+            "num_tiles": 2
+        }
+    ]
+}
