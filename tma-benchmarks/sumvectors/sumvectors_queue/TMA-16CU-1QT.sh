@@ -23,12 +23,18 @@ cd ./sumvectors_queue
 go build
 
 # 512 TileSize
-./sumvectors_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-512" -length=4194304 -tilesize=512 -queue_tiles=1 -globalsize=10240 -localsize=640 &
+./sumvectors_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-512" -length=4194304 -tilesize=512 -queue_tiles=1 -globalsize=10240 -localsize=640 -gpu-model="$1" &
 
 # 8192 TileSize
-./sumvectors_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-8192" -length=4194304 -tilesize=8192 -queue_tiles=1 -globalsize=10240 -localsize=640 &
+./sumvectors_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1qt-8192" -length=4194304 -tilesize=8192 -queue_tiles=1 -globalsize=10240 -localsize=640 -gpu-model="$1" &
 
 wait
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0

@@ -23,8 +23,15 @@ cd ./sumvectors_queue_configurator_driver
 
 go build
 
-./sumvectors_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus" -length=8388608 -globalsize=20480 -localsize=640
+./sumvectors_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus" -length=8388608 -globalsize=20480 -localsize=640 -gpu-model="$1"
 
+
+# Finish the script
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0
