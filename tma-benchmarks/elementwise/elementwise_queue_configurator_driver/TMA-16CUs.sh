@@ -23,8 +23,14 @@ cd ./elementwise_queue_configurator_driver
 
 go build
 
-./elementwise_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus" -length=4194304 -globalsize=10240 -localsize=640
+./elementwise_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus" -length=4194304 -globalsize=10240 -localsize=640 -gpu-model="$1"
 
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0

@@ -4,6 +4,10 @@
 
 cd ./elementwise_queue_configurator
 
+# Sanity check, beacuse we are no longer supporting this model
+echo "Invalid model name"
+exit 1
+
 sbatch TMA-1CU.sh
 sbatch TMA-2CUs.sh
 sbatch TMA-4CUs.sh

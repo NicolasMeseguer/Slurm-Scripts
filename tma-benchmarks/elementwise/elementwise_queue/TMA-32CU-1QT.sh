@@ -23,12 +23,18 @@ cd ./elementwise_queue
 go build
 
 # 512 TileSize
-./elementwise_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-1qt-512" -length=8388608 -tilesize=512 -queue_tiles=1 -globalsize=20480 -localsize=640 &
+./elementwise_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-1qt-512" -length=8388608 -tilesize=512 -queue_tiles=1 -globalsize=20480 -localsize=640 -gpu-model="$1" &
 
 # 8192 TileSize
-./elementwise_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-1qt-8192" -length=8388608 -tilesize=8192 -queue_tiles=1 -globalsize=20480 -localsize=640 &
+./elementwise_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus-1qt-8192" -length=8388608 -tilesize=8192 -queue_tiles=1 -globalsize=20480 -localsize=640 -gpu-model="$1" &
 
 wait
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0
