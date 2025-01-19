@@ -30,7 +30,7 @@ go build
 mkdir -p $1
 
 # Move the csv files to the $1 directory
-mv slurm-1cu-* $1
+mv slurm-* $1
 
 # Finish the script
 exit 0
