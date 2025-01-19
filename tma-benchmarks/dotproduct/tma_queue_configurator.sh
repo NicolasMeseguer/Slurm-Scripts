@@ -4,6 +4,10 @@
 
 cd ./dotproduct_queue_configurator
 
+# Sanity check, beacuse we are no longer supporting this model
+echo "Invalid model name"
+exit 1
+
 sbatch TMA-1CU.sh
 
 # We can already skip 2CUs to 8CUs

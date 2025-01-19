@@ -24,9 +24,15 @@ cd ./dotproduct_queue
 go build
 
 # 1024 TileSize
-./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-2qt-1024" -length=2097152 -tilesize=1024 -queue_tiles=2 -globalsize=9216 -localsize=576 &
+./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-2qt-1024" -length=2097152 -tilesize=1024 -queue_tiles=2 -globalsize=9216 -localsize=576 -gpu-model="$1" &
 
 wait
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0
