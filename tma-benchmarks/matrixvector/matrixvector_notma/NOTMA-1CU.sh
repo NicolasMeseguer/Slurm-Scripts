@@ -24,18 +24,24 @@ cd ./matrixvector_notma
 go build
 
 # 64 TileSize
-./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-64" -dim_m=2048 -dim_k=2048 -TileSizeK=64 -globalsize=512 -localsize=512 &
+./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-64" -dim_m=2048 -dim_k=2048 -TileSizeK=64 -globalsize=512 -localsize=512 -gpu-model="$1" &
 
 # 128 TileSize
-./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-128" -dim_m=2048 -dim_k=2048 -TileSizeK=128 -globalsize=512 -localsize=512 &
+./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-128" -dim_m=2048 -dim_k=2048 -TileSizeK=128 -globalsize=512 -localsize=512 -gpu-model="$1" &
 
 # 256 TileSize
-./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-256" -dim_m=2048 -dim_k=2048 -TileSizeK=256 -globalsize=512 -localsize=512 &
+./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-256" -dim_m=2048 -dim_k=2048 -TileSizeK=256 -globalsize=512 -localsize=512 -gpu-model="$1" &
 
 # 512 TileSize
-./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-512" -dim_m=2048 -dim_k=2048 -TileSizeK=512 -globalsize=512 -localsize=512 &
+./matrixvector_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-1cu-512" -dim_m=2048 -dim_k=2048 -TileSizeK=512 -globalsize=512 -localsize=512 -gpu-model="$1" &
 
 wait
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0

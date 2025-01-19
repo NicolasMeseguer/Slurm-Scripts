@@ -25,12 +25,18 @@ cd ./matrixvector
 go build
 
 # 256 TileSize
-./matrixvector -timing -magic-memory-copy -report-all -metric-file-name="slurm-32cus-256" -dim_m=2048 -dim_k=2048 -TileSizeK=256 -globalsize=18432 -localsize=576 &
+./matrixvector -timing -magic-memory-copy -report-all -metric-file-name="slurm-32cus-256" -dim_m=2048 -dim_k=2048 -TileSizeK=256 -globalsize=18432 -localsize=576 -gpu-model="$1" &
 
 # 512 TileSize
-./matrixvector -timing -magic-memory-copy -report-all -metric-file-name="slurm-32cus-512" -dim_m=2048 -dim_k=2048 -TileSizeK=512 -globalsize=18432 -localsize=576 &
+./matrixvector -timing -magic-memory-copy -report-all -metric-file-name="slurm-32cus-512" -dim_m=2048 -dim_k=2048 -TileSizeK=512 -globalsize=18432 -localsize=576 -gpu-model="$1" &
 
 wait
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0

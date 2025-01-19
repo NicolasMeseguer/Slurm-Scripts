@@ -23,7 +23,13 @@ cd ./matrixvector_queue_configurator_driver
 
 go build
 
-./matrixvector_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus" -dim_m=2048 -dim_k=2048 -globalsize=9216 -localsize=576
+./matrixvector_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus" -dim_m=2048 -dim_k=2048 -globalsize=9216 -localsize=576 -gpu-model="$1"
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0
