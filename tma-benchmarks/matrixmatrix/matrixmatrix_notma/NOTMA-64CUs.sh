@@ -25,9 +25,15 @@ cd ./matrixmatrix_notma
 go build
 
 # 512 TileSize
-./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-512" -dim_m=512 -dim_k=2048 -dim_n=128 -TileSizeK=512 -globalsize=32768 -localsize=512 &
+./matrixmatrix_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-64cus-512" -dim_m=512 -dim_k=2048 -dim_n=128 -TileSizeK=512 -globalsize=32768 -localsize=512 -gpu-model="$1" &
 
 wait
+
+# Create the $1 directory if it does not exist
+mkdir -p $1
+
+# Move the csv files to the $1 directory
+mv slurm-1cu-* $1
 
 # Finish the script
 exit 0
