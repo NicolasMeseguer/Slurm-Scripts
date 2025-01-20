@@ -14,11 +14,7 @@ if [ "$MODEL_NAME" != "r9nano" ] && [ "$MODEL_NAME" != "mi100" ] && [ "$MODEL_NA
     exit 1
 fi
 
-sbatch TMA-1CU.sh $MODEL_NAME
-sbatch TMA-16CUs.sh $MODEL_NAME
-sbatch TMA-32CUs.sh $MODEL_NAME
-sbatch TMA-64CUs.sh $MODEL_NAME
-
+sbatch runner.sh $MODEL_NAME
 
 # Finish the script
 exit 0
