@@ -25,6 +25,15 @@ go build
 # 512 TileSize
 ./sumvectors_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-512" -length=4194304 -tilesize=512 -globalsize=8192 -localsize=512 -gpu-model="$1" &
 
+# 1024 TileSize
+./sumvectors_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-1024" -length=4194304 -tilesize=1024 -globalsize=8192 -localsize=512 -gpu-model="$1" &
+
+# 2048 TileSize
+./sumvectors_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-2048" -length=4194304 -tilesize=2048 -globalsize=8192 -localsize=512 -gpu-model="$1" &
+
+# 4096 TileSize
+./sumvectors_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-4096" -length=4194304 -tilesize=4096 -globalsize=8192 -localsize=512 -gpu-model="$1" &
+
 # 8192 TileSize
 ./sumvectors_notma -timing -report-all -magic-memory-copy -metric-file-name="slurm-16cus-8192" -length=4194304 -tilesize=8192 -globalsize=8192 -localsize=512 -gpu-model="$1" &
 

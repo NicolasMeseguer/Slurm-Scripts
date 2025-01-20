@@ -8,12 +8,13 @@ cd ./matrixvector
 MODEL_NAME=$1
 
 # If the name of the model is not 'r9nano' or 'mi100', then exit
-if [ "$MODEL_NAME" != "r9nano" ] && [ "$MODEL_NAME" != "mi100" ]; then
+if [ "$MODEL_NAME" != "r9nano" ] && [ "$MODEL_NAME" != "mi100" ] && [ "$MODEL_NAME" != "radeon530" ]; then
+
     echo "Invalid model name"
     exit 1
 fi
 
-# sbatch TMA-1CU.sh $MODEL_NAME
+sbatch TMA-1CU.sh $MODEL_NAME
 # sbatch TMA-2CUs.sh $MODEL_NAME
 # sbatch TMA-4CUs.sh $MODEL_NAME
 # sbatch TMA-8CUs.sh $MODEL_NAME
