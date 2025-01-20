@@ -26,7 +26,7 @@ go build
 LOCALSIZE=640
 BASE_LENGTH=262144
 
-for CU in 1 2 4 5 8 16 32 64 128; do
+for CU in 1 2 4 5 8 16 32 64 120; do
 
   # If the iteration is bigger than 5 and the $1 is 'radeon530', then exit
   if [ $CU -gt 5 ] && [ "$1" == "radeon530" ]; then
@@ -37,7 +37,7 @@ for CU in 1 2 4 5 8 16 32 64 128; do
     exit 0
   
   # If the iteration is bigger than 128 and the $1 is 'mi100', then exit
-  elif [ $CU -gt 128 ] && [ "$1" == "mi100" ]; then
+  elif [ $CU -gt 120 ] && [ "$1" == "mi100" ]; then
     exit 0
   fi
 
