@@ -14,25 +14,7 @@ if [ "$MODEL_NAME" != "r9nano" ] && [ "$MODEL_NAME" != "mi100" ] && [ "$MODEL_NA
     exit 1
 fi
 
-sbatch TMA-1CU-1QT.sh $MODEL_NAME
-sbatch TMA-1CU-2QT.sh $MODEL_NAME
-sbatch TMA-1CU-4QT.sh $MODEL_NAME
-# sbatch TMA-2CU-1QT.sh $MODEL_NAME
-# sbatch TMA-2CU-2QT.sh $MODEL_NAME
-# sbatch TMA-2CU-4QT.sh $MODEL_NAME
-# sbatch TMA-4CU-1QT.sh $MODEL_NAME
-# sbatch TMA-4CU-2QT.sh $MODEL_NAME
-# sbatch TMA-4CU-4QT.sh $MODEL_NAME
-# sbatch TMA-8CU-1QT.sh $MODEL_NAME
-# sbatch TMA-8CU-2QT.sh $MODEL_NAME
-# sbatch TMA-8CU-4QT.sh $MODEL_NAME
-
-# sbatch TMA-16CU-1QT.sh $MODEL_NAME
-# sbatch TMA-16CU-2QT.sh $MODEL_NAME
-# sbatch TMA-32CU-1QT.sh $MODEL_NAME
-# sbatch TMA-32CU-2QT.sh $MODEL_NAME
-# sbatch TMA-64CU-1QT.sh $MODEL_NAME
-# sbatch TMA-64CU-2QT.sh $MODEL_NAME
+sbatch runner.sh $MODEL_NAME
 
 # Finish the script
 exit 0

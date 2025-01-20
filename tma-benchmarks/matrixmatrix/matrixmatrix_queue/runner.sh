@@ -5,10 +5,10 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=tma_matrixvector_queue_configurator_driver
+#SBATCH --job-name=tma_matrixmatrix_queue
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=8
 
 # You may not place any commands before the last SBATCH directive
 
@@ -19,13 +19,14 @@
 cd /home/nmeseguer/mgpusim/samples/tma
 
 # Queue Tester
-cd ./matrixvector_queue_configurator_driver
+cd ./matrixmatrix_queue
 
 go build
 
 LOCALSIZE=576
-DIM_M=2048
+DIM_M=512
 DIM_K=2048
+DIM_N=128
 
 for CU in 1 2 4 5 8 16 32 64 128; do
 
@@ -44,7 +45,13 @@ for CU in 1 2 4 5 8 16 32 64 128; do
 
   GLOBALSIZE=$(( $LOCALSIZE * $CU ))
 
-  ./matrixvector_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu" -dim_m=$DIM_M -dim_k=$DIM_K -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
+  for QUEUETILE in 1 2 4; do
+    for TILESIZE in 64 128 256 512; do
+
+      ./matrixmatrix_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu-${QUEUETILE}qt-${TILESIZE}" -dim_m=$DIM_M -dim_k=$DIM_K -dim_n=$DIM_N -TileSizeK=$TILESIZE -queue_tiles=$QUEUETILE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
+      
+    done
+  done
 done
 
 # Create the $1 directory if it does not exist
