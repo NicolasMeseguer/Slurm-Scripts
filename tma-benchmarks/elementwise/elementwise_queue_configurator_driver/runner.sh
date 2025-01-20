@@ -5,10 +5,10 @@
 ##############################
 
 # Give your job a name, so you can recognize it in the queue overview
-#SBATCH --job-name=tma_elementwiseK
+#SBATCH --job-name=tma_elementwise_queue_configurator_driver
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=2
 
 # You may not place any commands before the last SBATCH directive
 
@@ -19,11 +19,11 @@
 cd /home/nmeseguer/mgpusim/samples/tma
 
 # Queue Tester
-cd ./elementwiseK
+cd ./elementwise_queue_configurator_driver
 
 go build
 
-LOCALSIZE=576
+LOCALSIZE=640
 BASE_LENGTH=262144
 
 for CU in 1 2 4 5 8 16 32 64 128; do
@@ -44,11 +44,7 @@ for CU in 1 2 4 5 8 16 32 64 128; do
   GLOBALSIZE=$(( $LOCALSIZE * $CU ))
   LENGTH=$(( $BASE_LENGTH * $CU ))
 
-  for TILESIZE in 512 1024 2048 4096 8192; do
-
-    ./elementwiseK -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu-${TILESIZE}" -length=$LENGTH -tilesize=$TILESIZE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
-
-  done
+  ./elementwise_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu" -length=$LENGTH -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
 done
 
 # Create the $1 directory if it does not exist
