@@ -46,14 +46,14 @@ for CU in 1 2 4 5 8 16 32 64 120; do
   for QUEUETILE in 1 2 4 8; do
     for TILESIZE in 512 1024 2048 4096 8192; do
 
-      ./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu-${QUEUETILE}qt-${TILESIZE}" -length=$BASE_LENGTH -tilesize=$TILESIZE -queue_tiles=$QUEUETILE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
+      ./dotproduct_queue -timing -report-all -magic-memory-copy -metric-file-name="${1}-slurm-${CU}cu-${QUEUETILE}qt-${TILESIZE}" -length=$BASE_LENGTH -tilesize=$TILESIZE -queue_tiles=$QUEUETILE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
       
     done
   done
 done
 
 # Create the $1 directory if it does not exist
-mkdir -p $1
+mkdir $1
 
 # Move the csv files to the $1 directory
 mv slurm-* $1

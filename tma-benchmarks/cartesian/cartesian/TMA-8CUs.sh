@@ -35,7 +35,7 @@ go build
 wait
 
 # Create the $1 directory if it does not exist
-mkdir -p $1
+mkdir $1
 
 # Move the csv files to the $1 directory
 mv slurm-* $1

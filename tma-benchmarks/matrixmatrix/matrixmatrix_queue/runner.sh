@@ -24,7 +24,7 @@ cd ./matrixmatrix_queue
 go build
 
 LOCALSIZE=576
-DIM_M=512
+DIM_M=1024
 DIM_K=2048
 DIM_N=128
 
@@ -46,19 +46,18 @@ for CU in 1 2 4 5 8 16 32 64 120; do
   GLOBALSIZE=$(( $LOCALSIZE * $CU ))
 
   for QUEUETILE in 1 2 4; do
-    for TILESIZE in 64 128 256 512; do
+    for TILESIZE in 64 128 256 512 1024 2048; do
 
-      ./matrixmatrix_queue -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu-${QUEUETILE}qt-${TILESIZE}" -dim_m=$DIM_M -dim_k=$DIM_K -dim_n=$DIM_N -TileSizeK=$TILESIZE -queue_tiles=$QUEUETILE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
+      # If the QUEUETILE * TILESIZE is bigger than DIM_K, then continue
+      if [ $(( $QUEUETILE * $TILESIZE )) -gt $DIM_K ]; then
+        continue
+      fi
+
+      ./matrixmatrix_queue -timing -report-all -magic-memory-copy -metric-file-name="${1}-slurm-${CU}cu-${QUEUETILE}qt-${TILESIZE}" -dim_m=$DIM_M -dim_k=$DIM_K -dim_n=$DIM_N -TileSizeK=$TILESIZE -queue_tiles=$QUEUETILE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
       
     done
   done
 done
-
-# Create the $1 directory if it does not exist
-mkdir -p $1
-
-# Move the csv files to the $1 directory
-mv slurm-* $1
 
 # Finish the script
 exit 0

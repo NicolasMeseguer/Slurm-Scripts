@@ -46,13 +46,13 @@ for CU in 1 2 4 5 8 16 32 64 120; do
 
   for TILESIZE in 512 1024 2048 4096 8192; do
 
-    ./elementwiseK -timing -report-all -magic-memory-copy -metric-file-name="slurm-${CU}cu-${TILESIZE}" -length=$LENGTH -tilesize=$TILESIZE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
+    ./elementwiseK -timing -report-all -magic-memory-copy -metric-file-name="${1}-slurm-${CU}cu-${TILESIZE}" -length=$LENGTH -tilesize=$TILESIZE -globalsize=$GLOBALSIZE -localsize=$LOCALSIZE -gpu-model="$1"
 
   done
 done
 
 # Create the $1 directory if it does not exist
-mkdir -p $1
+mkdir $1
 
 # Move the csv files to the $1 directory
 mv slurm-* $1

@@ -26,7 +26,7 @@ go build
 ./cartesian_queue_configurator_driver -timing -report-all -magic-memory-copy -metric-file-name="slurm-32cus" -length_a=131072 -length_b=4096 -globalsize=18432 -localsize=576 -gpu-model="$1"
 
 # Create the $1 directory if it does not exist
-mkdir -p $1
+mkdir $1
 
 # Move the csv files to the $1 directory
 mv slurm-* $1
