@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-# No TMA YOLO
+# No TMA DNN
 
-cd ./yolo_notma
+cd ./dnn_notma
 
 # The first parameter is the name of the model
 MODEL_NAME=$1

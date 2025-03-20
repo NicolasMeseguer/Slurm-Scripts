@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-# TMA YOLO Queue Configurator
+# TMA DNN
 
-cd ./yolo_queue_configurator_driver
+cd ./dnn
 
 # The first parameter is the name of the model
 MODEL_NAME=$1

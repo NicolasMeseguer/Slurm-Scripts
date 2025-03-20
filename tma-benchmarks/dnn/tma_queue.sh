@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-# TMA Queue YOLO
+# TMA Queue DNN
 
-cd ./yolo_queue
+cd ./dnn_queue
 
 # The first parameter is the name of the model
 MODEL_NAME=$1
